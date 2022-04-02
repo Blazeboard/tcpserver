@@ -10,14 +10,14 @@ fn main() {
     };
     // 向Steam中写入字符串Hello
     match stream.write("Hello".as_bytes()) {
-        Ok(n) => println!("{}", n), // 向服务端发送的字符数
+        Ok(n) => println!("向服务端发送的字符数：{}", n), // 向服务端发送的字符数
         Err(e) => println!("{}", e),
     };
 
     // 创建buffer以获取服务器发来的数据，这里只获取前4个字符
     let mut buffer = [0; 4];
     match stream.read(&mut buffer) {
-        Ok(n) => println!("{}", n), // 从服务端接收到的字符数
+        Ok(n) => println!("从服务端接收到的字符数：{}", n), // 从服务端接收到的字符数
         Err(e) => println!("{}", e),
     };
 
